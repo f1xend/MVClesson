@@ -22,14 +22,17 @@ namespace EssentialTools.Controllers
 
         public ActionResult Index()
         {
-            LinqValueCalculator calc = new LinqValueCalculator();
+
+            IKernel ninjectKernel = new StandardKernel();
+            ninjectKernel.Bind<IValueCalculator>().To<LinqValueCalculator>();
+
+            IValueCalculator calc = ninjectKernel.Get<IValueCalculator>();
+
             ShoppingCart cart = new ShoppingCart(calc)
             {
                 Products = products
             };
-
             decimal totalValue = cart.CalculateProductTotal();
-
             return View(totalValue);
         }
     }

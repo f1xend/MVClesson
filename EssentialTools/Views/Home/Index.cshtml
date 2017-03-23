@@ -1,7 +1,19 @@
-﻿
+﻿@model decimal
+
+
 @{
-    ViewBag.Title = "Index";
+   Layout = null;
 }
 
-<h2>Index</h2>
-
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Значение</title>
+</head>
+<body>
+    <div>
+        Общая стоимость $@Model
+    </div>
+</body>
+</html>
