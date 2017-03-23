@@ -1,0 +1,10 @@
+﻿@model WebApplication1.Models.Product
+
+@{
+    ViewBag.Title = "NameAndPrice";
+    Layout = "~/Views/Shared/_BasicLayout.cshtml";
+}
+
+<h2>Название и цена</h2>
+Название продукта - @Model.Name, он стоит $@Model.Price
+
